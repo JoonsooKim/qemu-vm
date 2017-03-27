@@ -1,0 +1,4 @@
+bzImage*
+*.img
+initrd*
+qemu-system-*
