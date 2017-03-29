@@ -1,5 +1,5 @@
 KERNEL_GIT_DIR=/home/js1304/Projects/remote_git/linux
-QEMU_DIR=/home/js1304/qemu-img
+QEMU_DIR=/home/js1304/qemu-vm
 MNT_DIR=ubuntu-root-part
 
 cd $KERNEL_GIT_DIR

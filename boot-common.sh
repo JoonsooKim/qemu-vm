@@ -12,7 +12,7 @@ REMOTE_DEV_HOST=localhost
 REMOTE_DEV_HOST_PORT=9999
 
 KERNEL_GIT_DIR=/home/js1304/Projects/remote_git/linux
-QEMU_DIR=/home/js1304/qemu-img
+QEMU_DIR=/home/js1304/qemu-vm
 
 if [ "$ARCH" == "arm32" ]; then
 	BIN_DIR=bin-arm32

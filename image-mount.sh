@@ -1,7 +1,7 @@
 TYPE=$1
 ARCH=$2
 
-QEMU_DIR=/home/js1304/qemu-img
+QEMU_DIR=/home/js1304/qemu-vm
 MNT_DIR=ubuntu-root-part
 
 if [ "$TYPE" == "" ]; then
