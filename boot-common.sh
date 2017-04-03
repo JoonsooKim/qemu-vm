@@ -147,6 +147,14 @@ else
 	KERNEL=$QEMU_DIR/bin-kernel/$TYPE
 fi
 
+if [ "$DEBUG" == "1" ]; then
+	KERNEL_DEBUG_PARAM="debug earlyprintk"
+	QEMU_DEBUG_PARAM="-serial stdio -monitor none"
+	if [ "$GDB" == "1" ]; then
+		QEMU_DEBUG_PARAM="$QEMU_DEBUG_PARAM -s"
+	fi
+fi
+
 #KERNEL_EXTRA_PARAM=""
 KERNEL_PARAM="$KERNEL_ROOT_PARAM $KERNEL_DEFAULT_PARAM $KERNEL_DEBUG_PARAM $KERNEL_EXTRA_PARAM"
 if [ "$KERNEL" != "" ]; then
@@ -159,14 +167,6 @@ echo "$KERNEL"
 
 if [ "$MEM" = "" ]; then
         MEM=1024
-fi
-
-if [ "$DEBUG" == "1" ]; then
-	KERNEL_DEBUG_PARAM="debug earlyprintk"
-	QEMU_DEBUG_PARAM="-serial stdio -monitor none"
-	if [ "$GDB" == "1" ]; then
-		QEMU_DEBUG_PARAM="$QEMU_DEBUG_PARAM -s -S"
-	fi
 fi
 
 CMD="$QEMU_CMD -nographic \
