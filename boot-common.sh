@@ -34,7 +34,7 @@ if [ "$ARCH" == "arm32" ]; then
 
 	QEMU_CMD="./qemu-system-arm -machine vexpress-a9"
 	QEMU_NET="-net nic,model=lan9118 -net user,hostfwd=tcp::$SSH_REDIR_PORT-:22"
-	#QEMU_EXTRA_PARAM="-dtb arm_kernel/vexpress-v2p-ca9.dtb"
+	QEMU_EXTRA_PARAM="-dtb $BIN_DIR/vexpress-v2p-ca9.dtb"
 
 elif [ "$ARCH" == "arm64" ]; then
 	BIN_DIR=bin-arm64
