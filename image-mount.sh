@@ -72,6 +72,7 @@ image_mount()
 
 		sudo kpartx -a $BIN_DIR/$IMG
 		sudo vgchange -a y
+		sleep 1
 		sudo mount /dev/ubuntu-vg/root $QEMU_DIR/$MNT_DIR
 
 	elif [ "$ARCH" == "dev" ]; then
