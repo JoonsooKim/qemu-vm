@@ -4,6 +4,9 @@ MEM=$3
 KERNEL_EXTRA_PARAM=$4
 
 
+#QEMU_DEBUG_PARAM="-serial stdio -monitor none"
+#QEMU_DEBUG_PARAM="-monitor telnet:127.0.0.1:1234,server,nowait"
+#MEM="6G,slots=4,maxmem=8G -numa node,mem=5G -numa node,mem=1G"
 DEBUG=1
 GDB=0
 
@@ -78,6 +81,9 @@ elif [ "$ARCH" == "x86" ]; then
 
 	IMG="ubuntu-server-dev.img"
 	QEMU_IMG="-drive file=$BIN_DIR/$IMG,if=virtio,cache=none"
+#	echo "WARNING!!!!!!: disk setup is changed to the disk on HDD rather than SSD"
+#	QEMU_IMG="-drive file=/home/js1304/HDD/qemu-vm/bin-x86/$IMG,if=virtio,cache=none"
+	QEMU_IMG="$QEMU_IMG -hdd /home/js1304/HDD/qemu-vm/tmp-disk.img"
 
 	KERNEL_ROOT_PARAM="root=/dev/mapper/ubuntu--vg-root"
 	KERNEL_DEFAULT_PARAM="console=ttyS0 ro ignore_loglevel"
