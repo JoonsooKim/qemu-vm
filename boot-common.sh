@@ -154,7 +154,7 @@ else
 fi
 
 if [ "$DEBUG" == "1" ]; then
-	KERNEL_DEBUG_PARAM="debug earlyprintk"
+	KERNEL_DEBUG_PARAM="debug earlyprintk=serial"
 	QEMU_DEBUG_PARAM="-serial stdio -monitor none"
 	if [ "$GDB" == "1" ]; then
 		QEMU_DEBUG_PARAM="$QEMU_DEBUG_PARAM -s"
